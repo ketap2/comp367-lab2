@@ -23,7 +23,7 @@
             LocalTime currentTime = LocalTime.now();
             int hour = currentTime.getHour();
             String greeting = (hour < 12) ? "Good morning" : "Good afternoon";
-            String name = "Your Name"; // modified via github issue
+            String name = "Keta Patel"; // modified via github issue
         %>
         <%= greeting %>, <%= name %>, Welcome to COMP367
     </div>
