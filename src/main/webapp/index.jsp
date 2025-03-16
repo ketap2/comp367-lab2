@@ -10,9 +10,12 @@
             font-family: Arial, sans-serif;
             margin: 40px;
             text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
         }
         .welcome {
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
             margin-top: 100px;
         }
     </style>
@@ -22,10 +25,10 @@
         <%
             LocalTime currentTime = LocalTime.now();
             int hour = currentTime.getHour();
-            String greeting = (hour < 12) ? "Good morning" : "Good afternoon";
-            String name = "Keta Patel"; // modified via github issue
+            String greeting = (hour < 12) ? "Good morning" : (hour < 18) ? "Good afternoon" : "Good evening";
+            String name = "Keta Patel"; // Modified via GitHub issue
         %>
-        <%= greeting %>, <%= name %>, Welcome to COMP367
+        <%= greeting %>, <%= name %>! Welcome to COMP367.
     </div>
 </body>
 </html>
