@@ -47,7 +47,7 @@ pipeline {
             steps {
                 sh 'docker stop comp367-webapp || true'
                 sh 'docker rm comp367-webapp || true'
-                sh 'docker run -d -p 8081:8080 --name comp367-webapp $DOCKER_IMAGE:latest'
+                sh '(netstat -tulpn | grep ":8002 " > /dev/null) && echo "Port 8002 already in use, cannot deploy" || docker run -d -p 8002:8080 --name comp367-webapp $DOCKER_IMAGE:latest'
             }
         }
     }
